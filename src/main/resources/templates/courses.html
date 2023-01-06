@@ -5,30 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Courses</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <div th:if="${!#lists.isEmpty(courses)}">
-    <table>
+    <table class="table table-bordered">
         <thead>
         <tr>
-            <th class="text-left">ID</th>
-            <th class="text-right">Name</th>
-            <th class="text-right">Duration</th>
-            <th class="text-right">Description</th>
-            <th class="text-right">Instructor</th>
-            <th class="text-right">Enrolled Students</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Description</th>
+            <th>Instructor</th>
+            <th>Enrolled Student Count</th>
+            <th>Enrolled Students</th>
         </tr>
         </thead>
         <tbody>
-        <tr class="text-center" th:each="course : ${courses}">
+        <tr th:each="course : ${courses}">
             <td th:text="${course.id}">[ID]</td>
             <td th:text="${course.name}">[Name]</td>
             <td th:text="${course.duration}">[Duration]</td>
             <td th:text="${course.description}">[Description]</td>
-            <td th:text="${course.instructor.instructorFirstName} + '' + course.instructor.instructorLastName">
+            <td th:text="${course.instructor.firstName + ' ' + course.instructor.lastName}">
                 [Instructor Name]
             </td>
             <td th:text="${#lists.size(course.enrolledStudents)}">[Number of Students]</td>
+            <td>
+                <th:block th:each="student : ${course.enrolledStudents}">
+                    <ul class="list-group">
+                        <li class="list-group-item" th:text="${student.name}">[Student]</li>
+                    </ul>
+                </th:block>
+            </td>
         </tr>
         </tbody>
     </table>
