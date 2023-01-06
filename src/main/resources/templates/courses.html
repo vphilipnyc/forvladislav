@@ -7,17 +7,34 @@
     <title>Courses</title>
 </head>
 <body>
-<table>
-    <tbody>
-    <tr class="text-center" th:each="course : ${courses}">
-        <td th:text="${course.id}">[ID]</td>
-        <td th:text="${course.name}">[Name]</td>
-        <td th:text="${course.duration}">[Duration]</td>
-        <td th:text="${course.description}">[Description]</td>
-        <td th:text="${course.instructor.instructorFirstName} + '' + course.instructor.instructorLastName">[Instructor Name]</td>
-        <td th:text="${#lists.size(course.enrolledStudents)}">[Number of Students]</td>
-    </tr>
-    </tbody>
-</table>
+<div th:if="${!#lists.isEmpty(courses)}">
+    <table>
+        <thead>
+        <tr>
+            <th class="text-left">ID</th>
+            <th class="text-right">Name</th>
+            <th class="text-right">Duration</th>
+            <th class="text-right">Description</th>
+            <th class="text-right">Instructor</th>
+            <th class="text-right">Enrolled Students</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center" th:each="course : ${courses}">
+            <td th:text="${course.id}">[ID]</td>
+            <td th:text="${course.name}">[Name]</td>
+            <td th:text="${course.duration}">[Duration]</td>
+            <td th:text="${course.description}">[Description]</td>
+            <td th:text="${course.instructor.instructorFirstName} + '' + course.instructor.instructorLastName">
+                [Instructor Name]
+            </td>
+            <td th:text="${#lists.size(course.enrolledStudents)}">[Number of Students]</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:if="${#lists.isEmpty(courses)}">
+    There are no courses to display.
+</div>
 </body>
 </html>

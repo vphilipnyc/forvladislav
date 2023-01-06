@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/course")
+@RequestMapping("/")
 public class CourseController {
 
     private final CourseService courseService;
@@ -21,7 +21,7 @@ public class CourseController {
         this.courseService = courseService;
     }
 
-    @GetMapping("/{courseId}}")
+    @GetMapping("/{courseId}")
     public String findCourse(@PathVariable Long courseId, Model model) {
 
         Optional<Course> optional = courseService.findById(courseId);
