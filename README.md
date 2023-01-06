@@ -18,7 +18,7 @@ You can see that there are many ways to do this, but in general please pay atten
 
 You can structure the codebase differently depending on how complex your requirements are.  For example, you can create a service for each repository.  In a small test application, this is likely not necessary.
 
-Lombok is a very useful dependency and while not required, it can save you from a lot of typos.
+Lombok is a very useful dependency and while not required, when useed correctly it can save you from a lot of typos and just give you less to read.
 
 For Thymeleaf, always provide a default value (in brackets in the HTML file in this repository).  Then it allows you to open up the HTML file and inspect the design without having to start up Spring or anything else.  Make sure the HTML is well-formed, or you will have issues that are otherwise hard to understand.
 
