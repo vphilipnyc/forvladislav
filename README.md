@@ -21,3 +21,5 @@ You can structure the codebase differently depending on how complex your require
 Lombok is a very useful dependency and while not required, it can save you from a lot of typos.
 
 For Thymeleaf, always provide a default value (in brackets in the HTML file in this repository).  Then it allows you to open up the HTML file and inspect the design without having to start up Spring or anything else.  Make sure the HTML is well-formed, or you will have issues that are otherwise hard to understand.
+
+There are no tests written for this repository, but that is a critical part of any project.  You will have slow progress in any complicated project without it.
