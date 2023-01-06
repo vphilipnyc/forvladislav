@@ -34,8 +34,8 @@
             <td th:text="${#lists.size(course.enrolledStudents)}">[Number of Students]</td>
             <td>
                 <th:block th:each="student : ${course.enrolledStudents}">
-                    <ul class="list-group">
-                        <li class="list-group-item" th:text="${student.name}">[Student]</li>
+                    <ul>
+                        <li th:text="${student.name}">[Student]</li>
                     </ul>
                 </th:block>
             </td>

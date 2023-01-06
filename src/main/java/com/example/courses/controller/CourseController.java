@@ -49,17 +49,17 @@ public class CourseController {
 
         Student maria = Student.builder()
                 .id(1L)
-                .name("Maria Taco")
+                .name("Maria Fernandez")
                 .build();
 
         Student raj = Student.builder()
                 .id(2L)
-                .name("Raj Chutney")
+                .name("Raj Singh")
                 .build();
 
         Student john = Student.builder()
                 .id(3L)
-                .name("John O'Malley")
+                .name("John O'Brien")
                 .build();
 
         courseAdminService.addStudents(Set.of(maria, raj, john));
@@ -67,7 +67,7 @@ public class CourseController {
         Instructor vlad = Instructor.builder()
                 .id(1L)
                 .firstName("Vlad")
-                .lastName("Vodka")
+                .lastName("Peskov")
                 .build();
 
         courseAdminService.addInstructor(vlad);
