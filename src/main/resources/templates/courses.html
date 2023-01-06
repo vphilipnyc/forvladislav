@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr class="text-center" th:each="course : ${courses}">
+        <td th:text="${course.id}">[ID]</td>
+        <td th:text="${course.name}">[Name]</td>
+        <td th:text="${course.duration}">[Duration]</td>
+        <td th:text="${course.description}">[Description]</td>
+        <td th:text="${course.instructor.instructorFirstName} + '' + course.instructor.instructorLastName">[Instructor Name]</td>
+        <td th:text="${#lists.size(course.enrolledStudents)}">[Number of Students]</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
