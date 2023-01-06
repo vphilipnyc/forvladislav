@@ -43,7 +43,7 @@ public class CourseController {
     }
 
     /*
-     * In reality, you could create logic to have an admin add courses.  We are just adding some dummy data here.
+     * We are just adding some dummy data here.
      */
     public void addTestCourses() {
 
@@ -76,6 +76,8 @@ public class CourseController {
                 .id(1L)
                 .name("How to Create an International Meal")
                 .instructor(vlad)
+                .description("No passport needed.")
+                .duration("1 hour")
                 .enrolledStudents(Set.of(maria, raj))
                 .build();
 
@@ -85,6 +87,8 @@ public class CourseController {
                 .id(2L)
                 .name("Mixology 101")
                 .instructor(vlad)
+                .description("Take off the next day.")
+                .duration("1 hours")
                 .enrolledStudents(Set.of(raj, john))
                 .build();
 

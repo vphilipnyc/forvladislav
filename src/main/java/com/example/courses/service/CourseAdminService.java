@@ -37,10 +37,6 @@ public class CourseAdminService {
         courseRepository.save(course);
     }
 
-    public void addStudent(Student student) {
-        studentRepository.save(student);
-    }
-
     public void addStudents(Set<Student> students) {
         studentRepository.saveAll(students);
     }
