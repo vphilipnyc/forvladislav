@@ -9,6 +9,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/*
+ * NOT A REALISTIC TEST.  You'd really want to test that the service works as it should.
+ */
 class CourseAdminServiceTest {
 
     @Test
